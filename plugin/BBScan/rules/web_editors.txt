@@ -1,0 +1,24 @@
+
+# Web Editors
+/fckeditor/_samples/default.html                      {tag="<title>FCKeditor"}   {type="html"}
+/ckeditor/samples/                                    {tag="<title>CKEditor Samples</title>"}
+/editor/ckeditor/samples/                             {tag="<title>CKEditor Samples</title>"}
+/ckeditor/samples/sample_posteddata.php               {tag="http://ckeditor.com</a>"}
+/editor/ckeditor/samples/sample_posteddata.php        {tag="http://ckeditor.com</a>"}      {root_only}
+/fck/editor/dialog/fck_spellerpages/spellerpages/server-scripts/spellchecker.php               {status=200}    {type="html"}  {tag="init_spell()"}
+/fckeditor/editor/dialog/fck_spellerpages/spellerpages/server-scripts/spellcheckder.php        {status=200}    {type="html"}  {tag="init_spell()"}
+
+
+# ueditor SSRF
+/ueditor/ueditor.config.js         {status=200}  {tag="php/controller.php"}
+/ueditor/1.4.3/ueditor.config.js         {status=200}  {tag="/php/getRemoteImage.php"}
+/ueditor/php/getRemoteImage.php     {tag="'tip':'"}    {status=200}      {root_only}
+/Scripts/h-ui/ueditor/1.4.3/                         {tag="demo"}          {status=200}   {root_only}
+/ueditor/1.4.3/                                      {tag="demo"}          {status=200}
+
+# webuploader
+/assets/lib/webuploader/0.1.5/server/preview.php     {tag="jsonrpc"}       {status=200}   {root_only}
+/webuploader/0.1.5/server/preview.php     {tag="jsonrpc"}       {status=200}
+/static/plugin/webuploader/0.1.5/server/preview.php  {tag="jsonrpc"}       {status=200}   {root_only}
+/webuploader/webuploader.js                          {tag="amdjs-api/wiki/require"} {status=200}
+/webuploader/0.1.5/webuploader.js                          {tag="amdjs-api/wiki/require"} {status=200}

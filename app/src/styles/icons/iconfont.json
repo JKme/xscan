@@ -1,0 +1,86 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1171867",
+      "name": "资产管理",
+      "font_class": "zichanguanli",
+      "unicode": "e62b",
+      "unicode_decimal": 58923
+    },
+    {
+      "icon_id": "1973570",
+      "name": "漏洞",
+      "font_class": "loudong",
+      "unicode": "e635",
+      "unicode_decimal": 58933
+    },
+    {
+      "icon_id": "3291926",
+      "name": "任务 下达",
+      "font_class": "renwuxiada",
+      "unicode": "e66e",
+      "unicode_decimal": 58990
+    },
+    {
+      "icon_id": "7373874",
+      "name": "云扫描器",
+      "font_class": "yunsaomiaoqi",
+      "unicode": "eb31",
+      "unicode_decimal": 60209
+    },
+    {
+      "icon_id": "7496703",
+      "name": "主机",
+      "font_class": "zhuji",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "7956892",
+      "name": "漏洞扫描",
+      "font_class": "loudongsaomiao",
+      "unicode": "eb89",
+      "unicode_decimal": 60297
+    },
+    {
+      "icon_id": "9294822",
+      "name": "主机",
+      "font_class": "zhuji1",
+      "unicode": "e507",
+      "unicode_decimal": 58631
+    },
+    {
+      "icon_id": "9731283",
+      "name": "poc",
+      "font_class": "poc",
+      "unicode": "e630",
+      "unicode_decimal": 58928
+    },
+    {
+      "icon_id": "11548019",
+      "name": "漏洞",
+      "font_class": "loudong1",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "12543599",
+      "name": "武器库",
+      "font_class": "wuqiku",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "13260889",
+      "name": "设 置",
+      "font_class": "shezhi",
+      "unicode": "e508",
+      "unicode_decimal": 58632
+    }
+  ]
+}

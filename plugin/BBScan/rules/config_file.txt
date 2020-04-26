@@ -1,0 +1,54 @@
+# Config
+/config.inc               {status=200}	   {type_no="html"}      {root_only}
+/config.php.bak           {status=206}	   {type="application/octet-stream"}   {tag="<?php"}    {root_only}
+/db.php.bak               {status=206}	   {type="application/octet-stream"}   {tag="<?php"}    {root_only}
+/conf/config.ini              {status=200}      {type_no="html"}      {root_only}
+/config.ini                   {status=200}      {type_no="html"}
+/config/config.ini            {status=200}      {type_no="html"}      {root_only}
+/configuration.ini            {status=200}      {type_no="html"}      {root_only}
+/configs/application.ini      {status=200}      {type_no="html"}      {root_only}
+/settings.ini         {status=200}      {type_no="html"}   {root_only}
+/application.ini      {status=200}      {type_no="html"}   {root_only}
+/conf.ini             {status=200}      {type_no="html"}   {root_only}
+/app.ini              {status=200}      {type_no="html"}   {root_only}
+/config.json	      {status=200}      {type="application/json"}        {tag="pass"}   {root_only}
+/application/configs/application.ini    {tag="["}    {type_no="html"}    {root_only}    {root_only}
+/.idea/workspace.xml    {status=200}    {tag="<project version="}       {type="xml"}    {root_only}
+/.idea/modules.xml      {status=200}    {tag="ProjectModuleManager"}    {type="xml"}    {root_only}
+/.idea/WebServers.xml   {status=200}    {tag="<project version"}        {type="xml"}    {root_only}
+
+/sftp-config.json	         {status=200}    {type="application/json"}   {tag="password"}  {root_only}
+# /app.cfg                   {status=206}    {root_only}
+
+# db config
+/config/database.yml       {status=200}    {type_no="html"}  {tag="passw"}    {root_only}
+/database.yml              {status=200}    {type_no="html"}  {root_only}
+/db.conf        {status=200}      {type_no="html"}           {root_only}
+/db.ini         {status=200}      {type_no="html"}   {tag="passw"}        {root_only}
+
+# add new rules https://github.com/Plazmaz/leaky-repo
+/.npmrc         {tag="registry"}        {root_only}
+/.dockercfg     {tag="docker"}          {root_only}
+/Dockerfile     {tag="RUN"}    {root_only}
+/misc-keys/cert-key.pem  {tag="BEGIN PRIVATE KEY"}          {root_only}
+/cloud/.credentials      {tag="secret_key"}                 {root_only}
+/cloud/.s3cfg            {tag="secret_key"}                 {root_only}
+/cloud/.tugboat                   {tag="authentication"}                 {root_only}
+/cloud/heroku.json                {tag="HEROKU_API_KEY"}                 {root_only}
+/web/var/www/.env                 {tag="APP_KEY"}                        {root_only}
+# /.git-credentials                 {tag="secret_key"}                   {root_only}
+/db/robomongo.json                {tag="userPassword"}                   {root_only}
+/db/mongoid.yml                   {tag="mongodb://"}                     {root_only}
+/.netrc                           {tag="smtp."}                          {root_only}
+/hub                              {tag="oauth_token"}                    {root_only}
+/filezilla/filezilla.xml         {status=200}    {tag="<FileZilla"}          {type="xml"}        {root_only}
+/filezilla/recentservers.xml     {status=200}    {type="<?xml"}   {tag="RecentServers"}      {root_only}
+/.docker/config.json             {tag="auths"}                                              {root_only}
+# /db/.pgpass                    {tag="localhost"}                                          {root_only}
+/.mozilla/firefox/logins.json    {status=200}     {tag="logins"}      type={"application/json"}      {root_only}
+/deployment-config.json          {status=200}     {tag="secret_key"}  type={"application/json"}      {root_only}
+/.ftpconfig                      {status=200}     {tag="promptForPass"}                              {root_only}
+/.remote-sync.json               {status=200}     {tag="uploadOnSave"}  type={"application/json"}    {root_only}
+/.vscode/sftp.json               {status=200}     {tag="remotePath"}      type={"application/json"}  {root_only}
+/sftp-config.json                {status=200}     {tag="confirm_overwrite_newer"}       type={"application/json"}   {root_only}
+/high-entropy-misc.txt           {status=200}     {tag="HES"}         {root_only}
