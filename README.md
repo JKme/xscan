@@ -1,5 +1,5 @@
 
-mongDB的服务端数据库要求版本>=3.6
+
 
 腾讯的TSS扫描器框架:  <https://mp.weixin.qq.com/s/uT8PmlKEAZkouIe8wAkLaA>
 1. 腾讯的TSS扫描器框架里面，有识别ssl的方式，可以根据实际的ssl通信过程来判断https协议
@@ -11,6 +11,8 @@ mongDB的服务端数据库要求版本>=3.6
 ## 安装:
 
 ```sh
+Python3
+mongDB的服务端数据库要求版本>=3.6
 redis-server
 mkdir logs
 echo > logs/error.log
@@ -25,9 +27,34 @@ celery -A tasks worker -l info
 cd ../plugin
 celery -A tasks worker -l info
 python subscribe.py
+
+如果是本地测试环境，需要node来编译:
+npm run dev
+开发环境可以先在本地编译好，然后上传过去，直接用nginx指向dist目录就可以了:
+npm build
+```
+
+##功能
+1. 使用masscan和nmap进行端口扫描
+2. BBscan来进行爬虫扫描
+3. POC-T来进行POC扫描
+
+##缺点
+```
+1. 代码垃圾,变量混乱,数据库结构不合理
+2. POC要改,而且没有界面修改POC
+3. 黑名单的数据没有展示
+```
+##优点
+```
+大概是有一个UI？
 ```
 
 
+###预览
+![](WX20200426-162949.png)
+![](WX20200426-163020.png)
+![](WechatIMG164.png)
 
 ### TODO:
 1. 白名单不跑POC，和BBScan共享一个白名单
