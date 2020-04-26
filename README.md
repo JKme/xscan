@@ -6,7 +6,11 @@
 2. 发送POC的requests需要封装为一个库
 3. 增加UA的随机性
 
+## 结构
 
+```
+Python3 + Vue + Redis + MongoDB + Celery
+```
 
 ## 安装:
 
