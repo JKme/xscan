@@ -12,6 +12,7 @@ mongDB的服务端数据库要求版本>=3.6
 
 ```sh
 redis-server
+mkdir logs
 echo > logs/error.log
 echo > logs/info.log
 pip3 install -r requirements.txt
