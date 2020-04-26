@@ -81,3 +81,4 @@ npm build
 * <https://github.com/superhuahua/xunfengES.git>
 * <https://github.com/w-digital-scanner/w12scan-client.git>
 * <https://github.com/al0ne/Vxscan.git>
+* <https://github.com/0xbug/Hawkeye>
