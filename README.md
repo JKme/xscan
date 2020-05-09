@@ -83,3 +83,21 @@ npm build
 * <https://github.com/w-digital-scanner/w12scan-client.git>
 * <https://github.com/al0ne/Vxscan.git>
 * <https://github.com/0xbug/Hawkeye>
+
+### END:
+有任何问题欢迎提issue(比如安装不上，比如node没编译好等等)。
+
+扫描器这个东西吧，说做起来很简单，但是丰富起来就无止境。比如从容师傅开源的爬虫，长亭的xray，之前想过把xray也加进去，但是这个鬼东西做了小半年快吐了，截止到现在算是达到了最开始想做的功能。所以留了很多坑，比如:
+1. 扫描结果不能导出来。(拉黑的功能还是拍脑袋想出来的)
+2. 比如给定一个域名: `http://example.com, https://example.com, www.example.com`如果都存在漏洞，保留哪个？
+3. 扫描器做完之后扫了几次，补了几个功能。一句话: 达到了能用的程度，坑很多。
+4. 要看进度可以加上flower
+5. 备份扫描可以加上钉钉或者slack机器人通知，之前是打算把这部分也celery化的
+
+再说下喜欢的地方:
+1. lijiejie的BBScan思路真厉害，所有规则集中到txt里面，这样比如某天看到一个指纹，加进去就可以了。
+2. POC扫描的时候，我判断了30x跳转，因为扫描的时候发现，requests不会重定向body数据包。所以一个无限循环的网站，这个扫描器就要凉
+3. 如果扫描的时候选择了80端口，git泄露poc扫描，当masscan发现8000端口也是http的时候，会用git的poc扫描这个http服务。
+4. 基于第三点，可以把指纹扫描放在最前面，POC的时候判断是不是这个指纹，然后再上POC
+
+为什么要写这个扫描器呢，那时候看wooyun的各位大佬好厉害，到处都是神器神器。
