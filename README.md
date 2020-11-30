@@ -32,10 +32,14 @@ cd ../plugin
 celery -A tasks worker -l info
 python subscribe.py
 
+
+cd app/build
+npm install
 如果是本地测试环境，需要node来编译:
 npm run dev
 开发环境可以先在本地编译好，然后上传过去，直接用nginx指向dist目录就可以了:
-npm build
+npm run-script build
+
 ```
 
 ## 功能
@@ -100,4 +104,3 @@ npm build
 3. 如果扫描的时候选择了80端口，git泄露poc扫描，当masscan发现8000端口也是http的时候，会用git的poc扫描这个http服务。
 4. 基于第三点，可以把指纹扫描放在最前面，POC的时候判断是不是这个指纹，然后再上POC
 
-为什么要写这个扫描器呢，那时候看wooyun的各位大佬好厉害，到处都是神器神器。
