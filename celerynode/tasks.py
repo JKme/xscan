@@ -146,16 +146,10 @@ def nmap_scan(hostname, ip, ports,task_name, task_id, tag_name):
 			for port in nm[ip]["tcp"].keys():
 				# if nm[ip]["tcp"][port]["state"] == "open":
 				if nm[ip]["tcp"][port]["state"]:
-					# nm[host]["tcp"][port]["extrainfo"] match codes
-					# pattern = re.compile('(php)|(aspx?)|(jsp)|(python)', re.I)
-					# match = pattern.search(nm[ip]["tcp"][port]["extrainfo"])
-					# if match:
-					# 	codes = match.group().lower()
-					# else:
-					# 	codes = ""
 					log.info("Get fingerprint for %s:%s",ip, port)
-# 					server = fingerprint_scan(ip, port)  #判断设备指纹
-					server, _ = http_detect(ip, port)  #判断是http服务还是非http服务
+					server = fingerprint_scan(ip, port)  #判断设备指纹
+					if server == "unknown":
+						server, _ = http_detect(ip, port)  #判断是http服务还是非https服务
 					server = server if server != 'unknown' else nm[ip]["tcp"][port]["name"]
 
 					title, status_code, banner = None, None, None
@@ -163,13 +157,6 @@ def nmap_scan(hostname, ip, ports,task_name, task_id, tag_name):
 						_ = '%s://%s:%s' %  (server, ip, port)
 						title, banner, status_code = get_http_desc(_)
 
-					# status_code = None
-					# if not server:
-					# 	title, scheme, banner, status_code = try_web(ip, port)
-					# 	if not scheme:
-					# 		title, scheme, banner, status_code = try_https(ip, port)
-					# 	server = scheme if scheme else nm[ip]["tcp"][port]["name"]
-					# 	server = server if server else 'unknown'
 
 					result = {
 						"server": server,
