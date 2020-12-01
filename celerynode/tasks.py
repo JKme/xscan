@@ -150,9 +150,9 @@ def nmap_scan(hostname, ip, ports,task_name, task_id, tag_name):
 
 					if int(port) == 80:
 						server = 'http'
-						log.info("80 success")
 					if int(port) == 443:
 						server = 'https'
+					log.info("http finger Done! {}:{} ==> {} ".format(ip, port,server))
 					server = fingerprint_scan(ip, port)  #判断设备指纹
 					log.info("fingerprint Done! {}:{} ==> {} ".format(ip, port,server))
 					if server == "unknown":
