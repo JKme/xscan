@@ -189,13 +189,13 @@ def nmap_scan(hostname, ip, ports,task_name, task_id, tag_name):
 					log.info("Store Ports Scan Result To DB %s", condition)
 
 					#TODO 页面相似性判断，如果差别比较大，更新banner，反之不变
-					if db.portInfo.find_one(condition):
-						db.portInfo.update(condition, {"last_find_date":
-							                               datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")})
-						log.info("--------Update Success---------\n%s", condition)
-					else:
-						db.portInfo.insert(dict(condition, **result))
-						log.info("--------Store Success---------\n%s", condition)
+# 					if db.portInfo.find_one(condition):
+# 						db.portInfo.update(condition, {"last_find_date":
+# 							                               datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")})
+# 						log.info("--------Update Success---------\n%s", condition)
+# 					else:
+					db.portInfo.insert(dict(condition, **result))
+					log.info("\n--------Store Success---------\n%s")
 
 					pocs = list(db.task.find({"task_id": task_id},{"pocs": 1, "_id":0}))[0]['pocs'] #任务ID对应的POC
 					poc_task = {
