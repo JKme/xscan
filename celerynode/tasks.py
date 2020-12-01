@@ -92,6 +92,7 @@ def masscan_scan(hostname, ip, task_name, task_id, ports, tag_name):
 	:param url:
 	:return: str "22,80" 开放的端口列表
 	"""
+	log.info("Host name is %s", hostname)
 	args = [MASSCAN.PATH, '-p', ports, '--rate', MASSCAN.RATE, ip]
 	try:
 		p = subprocess.Popen(args,stdin=subprocess.PIPE,
