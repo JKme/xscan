@@ -146,14 +146,18 @@ def nmap_scan(hostname, ip, ports,task_name, task_id, tag_name):
 			for port in nm[ip]["tcp"].keys():
 				# if nm[ip]["tcp"][port]["state"] == "open":
 				if nm[ip]["tcp"][port]["state"]:
-					log.info("Get fingerprint for %s:%s",ip, port)
+					log.info("Ready Get fingerprint for %s:%s",ip, port)
 					server = fingerprint_scan(ip, port)  #判断设备指纹
+					log.info("fingerprint Done! {}:{} ==> {} ".format(ip, port,server))
 					if server == "unknown":
+						log.info("http detect process: {}:{}".format(ip, port))
 						server, _ = http_detect(ip, port)  #判断是http服务还是非https服务
 					server = server if server != 'unknown' else nm[ip]["tcp"][port]["name"]
-
+					log.info("http detect Done! {}:{} is {}".format(ip, port, server))
+					
 					title, status_code, banner = None, None, None
 					if server in ('http', 'https'):
+						log.info("get http banner for {}:{}".format(ip, port))
 						_ = '%s://%s:%s' %  (server, ip, port)
 						title, banner, status_code = get_http_desc(_)
 
