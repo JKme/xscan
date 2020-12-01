@@ -147,6 +147,7 @@ def nmap_scan(hostname, ip, ports,task_name, task_id, tag_name):
 				# if nm[ip]["tcp"][port]["state"] == "open":
 				if nm[ip]["tcp"][port]["state"]:
 					log.info("Ready Get fingerprint for %s:%s",ip, port)
+					server = "unknown"
 					server = fingerprint_scan(ip, port)  #判断设备指纹
 					log.info("fingerprint Done! {}:{} ==> {} ".format(ip, port,server))
 					if server == "unknown":
