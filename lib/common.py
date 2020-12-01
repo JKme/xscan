@@ -253,6 +253,14 @@ def http_detect(host, port):
 	probe = b"GET / HTTP/1.0\r\n\r\n"
 	service = 'unknown'
 	content = ''
+	
+	if int(port) == 80:
+		service = 'http'
+		return service, ''
+	if int(port) == 443:
+		service = 'https'
+		return service, ''
+		
 	socket.setdefaulttimeout(SOCKET_TIMEOUT)
 	try:
 		with socket.create_connection((host, port), timeout=SOCKET_TIMEOUT) as conn:
