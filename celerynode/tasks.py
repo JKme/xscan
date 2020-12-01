@@ -187,6 +187,7 @@ def nmap_scan(hostname, ip, ports,task_name, task_id, tag_name):
 					# print('nmap final result for %s:%s is %s' % (ip, port, result))
 					condition = {'task_name': task_name,'task_id': task_id, 'tag_name': tag_name,'ip': ip, 'port': port}
 					log.info("Store Ports Scan Result To DB %s", condition)
+					log.info("Store Result is {}".format(result))
 
 					#TODO 页面相似性判断，如果差别比较大，更新banner，反之不变
 # 					if db.portInfo.find_one(condition):
