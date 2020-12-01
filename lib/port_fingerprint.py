@@ -159,7 +159,7 @@ PROBE = {
 }
 
 def fingerprint_scan(ip, port):
-	ret = None
+	ret = "unknown"
 	if int(port) not in [80, 443]:
 		try:
 			sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
