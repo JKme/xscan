@@ -9,7 +9,7 @@ from server.controllers.dashboard import Count, Detail,Query, GetVulTypes, Query
 from server.controllers.tasks import AddTask, QueryTask, QueryTaskId, ReplayTask,DelTask,AddVulDesc,AddVulBlack,QueryTaskTarget
 from server.controllers.pocs import QueryPoc
 from server.controllers.devices import QueryDevice
-from server.controllers.settings import AddTag
+from server.controllers.tags import AddTag
 from server.controllers.group import QueryTagDetail,QueryTagTarget
 from flask_cors import CORS
 
