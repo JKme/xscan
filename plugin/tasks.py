@@ -104,11 +104,11 @@ def scan_init(task_name, task_id, target, tag_name):
 				db.bbscan.update_one({"task_id":task_id,"task_name":task_name,"tag_name":tag_name},
 				                     {"$set":{"vul_Type": "white list", "url": target}})
 				# return
-			if service in ('http', 'https'): # http端口保存到资产数据库
-				m = re.search('<title>(.*?)</title>', content)
-				title = m.group(1) if m else ''
-				db.portInfo.update_one({"task_id": task_id, "task_name": task_name,"tag_name":tag_name, "ip":ip, "port":port},
-				                       {"$set":{"server": service,"banner": content,"title":title,"hostname":hostname,"url":target}},upsert=True)
+# 			if service in ('http', 'https'): # http端口保存到资产数据库
+# 				m = re.search('<title>(.*?)</title>', content)
+# 				title = m.group(1) if m else ''
+# 				db.portInfo.update_one({"task_id": task_id, "task_name": task_name,"tag_name":tag_name, "ip":ip, "port":port},
+# 				                       {"$set":{"server": service,"banner": content,"title":title,"hostname":hostname,"url":target}},upsert=True)
 
 		else:
 			log.info("Port Closed %s:%s", host, port)
