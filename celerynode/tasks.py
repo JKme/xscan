@@ -153,7 +153,7 @@ def nmap_scan(hostname, ip, ports,task_name, task_id, tag_name):
 					# else:
 					# 	codes = ""
 					log.info("Get fingerprint for %s:%s",ip, port)
-					server = fingerprint_scan(ip, port)  #判断设备指纹
+# 					server = fingerprint_scan(ip, port)  #判断设备指纹
 					server, _ = http_detect(ip, port)  #判断是http服务还是非http服务
 					server = server if server != 'unknown' else nm[ip]["tcp"][port]["name"]
 
@@ -195,7 +195,7 @@ def nmap_scan(hostname, ip, ports,task_name, task_id, tag_name):
 # 						log.info("--------Update Success---------\n%s", condition)
 # 					else:
 					db.portInfo.insert(dict(condition, **result))
-					log.info("\n--------Store Success---------\n%s")
+					log.info("\n--------Store Success---------%s")
 
 					pocs = list(db.task.find({"task_id": task_id},{"pocs": 1, "_id":0}))[0]['pocs'] #任务ID对应的POC
 					poc_task = {
