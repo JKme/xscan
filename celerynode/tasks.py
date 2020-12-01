@@ -192,8 +192,10 @@ def nmap_scan(hostname, ip, ports,task_name, task_id, tag_name):
 					if db.portInfo.find_one(condition):
 						db.portInfo.update(condition, {"last_find_date":
 							                               datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")})
+						log.info("--------Update Success---------\n%s", condition)
 					else:
 						db.portInfo.insert(dict(condition, **result))
+						log.info("--------Store Success---------\n%s", condition)
 
 					pocs = list(db.task.find({"task_id": task_id},{"pocs": 1, "_id":0}))[0]['pocs'] #任务ID对应的POC
 					poc_task = {
